@@ -83,27 +83,6 @@ class LoadWeatherDataViewController: UIViewController {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
             
-        case .restricted, .denied:
-            WeatherNetworkManager.shared.fetchRequestDataForCurrentWeather(cityName: "Москва") { [weak self] currentWeatherInfo in
-                guard let currentWeatherInfo = currentWeatherInfo else { return }
-                self?.currentWeatherData = currentWeatherInfo
-                
-                guard let lon = self?.currentWeatherData.coord?.lon,
-                      let lat = self?.currentWeatherData.coord?.lat,
-                      let cityName = self?.currentWeatherData.name else { return }
-                
-                WeatherNetworkManager.shared.fetchRequestDataForWeeklyWeather(lon: lon, lat: lat) { [weak self] weeklyWeatherInfo in
-                    guard let weeklyWeatherInfo = weeklyWeatherInfo else { return }
-                    self?.weeklyWeatherData = weeklyWeatherInfo
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        let weatherVC = WeatherDataViewController(cityName: cityName, currentWeatherInfo: self?.currentWeatherData, weeklyWeatherInfo: self?.weeklyWeatherData)
-                        weatherVC.modalPresentationStyle = .overFullScreen
-                        self?.present(weatherVC, animated: true, completion: nil)
-                    }
-                }
-            }
-            
         case .authorizedAlways, .authorizedWhenInUse:
             guard let lon = locationManager.location?.coordinate.longitude,
                   let lat = locationManager.location?.coordinate.latitude else { return }
@@ -125,8 +104,26 @@ class LoadWeatherDataViewController: UIViewController {
                 }
             }
             
-        @unknown default:
-            break
+        default:
+            WeatherNetworkManager.shared.fetchRequestDataForCurrentWeather(cityName: "Москва") { [weak self] currentWeatherInfo in
+                guard let currentWeatherInfo = currentWeatherInfo else { return }
+                self?.currentWeatherData = currentWeatherInfo
+                
+                guard let lon = self?.currentWeatherData.coord?.lon,
+                      let lat = self?.currentWeatherData.coord?.lat,
+                      let cityName = self?.currentWeatherData.name else { return }
+                
+                WeatherNetworkManager.shared.fetchRequestDataForWeeklyWeather(lon: lon, lat: lat) { [weak self] weeklyWeatherInfo in
+                    guard let weeklyWeatherInfo = weeklyWeatherInfo else { return }
+                    self?.weeklyWeatherData = weeklyWeatherInfo
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        let weatherVC = WeatherDataViewController(cityName: cityName, currentWeatherInfo: self?.currentWeatherData, weeklyWeatherInfo: self?.weeklyWeatherData)
+                        weatherVC.modalPresentationStyle = .overFullScreen
+                        self?.present(weatherVC, animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
 }
