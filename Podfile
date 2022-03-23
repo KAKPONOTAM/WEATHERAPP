@@ -8,5 +8,6 @@ target 'weatherApp' do
   inhibit_all_warnings!
   
   pod 'Kingfisher'
+  pod 'Firebase/Analytics'
 
 end

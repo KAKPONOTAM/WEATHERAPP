@@ -19,6 +19,7 @@
 		664FE49927C411E200257F20 /* WeatherTemperatureTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE49827C411E200257F20 /* WeatherTemperatureTypes.swift */; };
 		664FE49B27C4124600257F20 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE49A27C4124600257F20 /* Temperature.swift */; };
 		664FE49D27C4136D00257F20 /* TemperatureFeelsLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE49C27C4136D00257F20 /* TemperatureFeelsLike.swift */; };
+		666CA57327EB1AED0025C3DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 666CA57227EB1AED0025C3DD /* GoogleService-Info.plist */; };
 		666F1FF927D275CC005C71D4 /* WeatherCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F1FF827D275CC005C71D4 /* WeatherCoordinates.swift */; };
 		66AB437E27BE42D70039B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AB437D27BE42D70039B064 /* AppDelegate.swift */; };
 		66AB438227BE42D70039B064 /* WeatherDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AB438127BE42D70039B064 /* WeatherDataViewController.swift */; };
@@ -57,6 +58,7 @@
 		664FE49827C411E200257F20 /* WeatherTemperatureTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTemperatureTypes.swift; sourceTree = "<group>"; };
 		664FE49A27C4124600257F20 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		664FE49C27C4136D00257F20 /* TemperatureFeelsLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureFeelsLike.swift; sourceTree = "<group>"; };
+		666CA57227EB1AED0025C3DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		666F1FF827D275CC005C71D4 /* WeatherCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCoordinates.swift; sourceTree = "<group>"; };
 		66AB437A27BE42D70039B064 /* weatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AB437D27BE42D70039B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				66AB438627BE42D90039B064 /* Assets.xcassets */,
 				66AB438827BE42D90039B064 /* LaunchScreen.storyboard */,
 				66AB438B27BE42D90039B064 /* Info.plist */,
+				666CA57227EB1AED0025C3DD /* GoogleService-Info.plist */,
 			);
 			path = weatherApp;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				664FE47227C153F900257F20 /* cities.json in Resources */,
+				666CA57327EB1AED0025C3DD /* GoogleService-Info.plist in Resources */,
 				66AB438A27BE42D90039B064 /* LaunchScreen.storyboard in Resources */,
 				66AB438727BE42D90039B064 /* Assets.xcassets in Resources */,
 			);
