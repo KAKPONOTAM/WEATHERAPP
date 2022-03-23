@@ -55,10 +55,12 @@ class WeatherDataViewController: UIViewController {
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       // addSubview()
+        addSubview()
         setupConstraints()
         setupTableView()
     }
+    
+    
     
     private func setupTableView() {
         weatherInfoTableView.delegate = self
