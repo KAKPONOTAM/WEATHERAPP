@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class HourlyWeatherDataCollectionViewCell: UICollectionViewCell {
     //MARK: - properties
@@ -72,13 +73,12 @@ class HourlyWeatherDataCollectionViewCell: UICollectionViewCell {
         guard let date = hourlyWeatherData.hourly?[indexPath.item].dt,
               let hourWeatherIconId = hourlyWeatherData.hourly?[indexPath.row].weather?.first?.icon,
               let hourWeatherDescriptionIconIdUrl = URL(string: "https://openweathermap.org/img/wn/\(hourWeatherIconId)@2x.png"),
-              let dataImage = try? Data(contentsOf: hourWeatherDescriptionIconIdUrl),
               let timezoneOffset = hourlyWeatherData.timezone_offset,
               let temperature = hourlyWeatherData.hourly?[indexPath.item].temp else { return }
         
         let correctHour = Date.getCorrectHour(unixTime: date, timezoneOffset: timezoneOffset)
         hourLabel.text = correctHour
-        weatherDescriptionImageView.image = UIImage(data: dataImage)
+        weatherDescriptionImageView.kf.setImage(with: hourWeatherDescriptionIconIdUrl)
         temperatureLabel.text = """
                                 Temp:
                                 \(Int(temperature))°C

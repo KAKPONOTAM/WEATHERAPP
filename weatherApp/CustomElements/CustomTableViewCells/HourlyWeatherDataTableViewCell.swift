@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class HourlyWeatherDataTableViewCell: UITableViewCell {
     //MARK: - properties
@@ -63,7 +64,6 @@ class HourlyWeatherDataTableViewCell: UITableViewCell {
     
     func hourlyWeatherTableViewCellConfigure(hourWeatherData: WeeklyWeatherData) {
         self.hourlyWeatherData = hourWeatherData
-        hourWeatherCollectionView.reloadData()
     }
 }
 

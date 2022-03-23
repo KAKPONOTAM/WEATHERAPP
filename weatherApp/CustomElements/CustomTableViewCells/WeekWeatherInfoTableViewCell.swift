@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 //MARK: - making custom class
 class WeekWeatherInfoTableViewCell: UITableViewCell {
@@ -131,7 +132,6 @@ class WeekWeatherInfoTableViewCell: UITableViewCell {
     func weeklyWeatherTableViewCellConfigure(weeklyWeatherData: WeeklyWeatherData, indexPath: IndexPath) {
         guard let iconId = weeklyWeatherData.daily?[indexPath.row].weather?.first?.icon,
               let iconUrl = URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"),
-              let iconData = try? Data(contentsOf: iconUrl),
               let weekDay = weeklyWeatherData.daily?[indexPath.row].dt,
               let temperature = weeklyWeatherData.daily?[indexPath.row].temp?.day,
               let maximalTemperature = weeklyWeatherData.daily?[indexPath.row].temp?.max,
@@ -154,7 +154,7 @@ class WeekWeatherInfoTableViewCell: UITableViewCell {
                                        \(Int(maximalTemperature))°C
                                        """
         
-        weatherDescriptionImageView.image = UIImage(data: iconData)
+        weatherDescriptionImageView.kf.setImage(with: iconUrl)
     }
 }
 

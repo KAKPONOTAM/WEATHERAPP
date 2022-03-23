@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class CurrentWeatherTableViewCell: UITableViewCell {
     //MARK: - properties
@@ -159,7 +160,6 @@ class CurrentWeatherTableViewCell: UITableViewCell {
               let maximalTemperature = currentWeatherData.main?.temp_max,
               let iconId = currentWeatherData.weather?.first?.icon,
               let iconUrl = URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"),
-              let iconData = try? Data(contentsOf: iconUrl),
               let description = currentWeatherData.weather?.first?.description,
               let windSpeed = currentWeatherData.wind?.speed else { return }
         
@@ -184,6 +184,6 @@ class CurrentWeatherTableViewCell: UITableViewCell {
                               \(Int(windSpeed)) m/s
                               """
         descriptionWeatherLabel.text = description
-        weatherDescriptionImageView.image = UIImage(data: iconData)
+        weatherDescriptionImageView.kf.setImage(with: iconUrl)
     }
 }
