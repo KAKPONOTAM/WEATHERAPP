@@ -1,5 +1,5 @@
 import UIKit
-import Kingfisher
+
 
 //MARK: - making custom class
 class WeekWeatherInfoTableViewCell: UITableViewCell {
