@@ -9,5 +9,6 @@ target 'weatherApp' do
   
   pod 'Kingfisher'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
 
 end
