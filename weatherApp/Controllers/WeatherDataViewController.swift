@@ -55,7 +55,7 @@ class WeatherDataViewController: UIViewController {
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubview()
+       // addSubview()
         setupConstraints()
         setupTableView()
     }
