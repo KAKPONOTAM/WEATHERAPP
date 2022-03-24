@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>74491443279-7kk006v08pg08tqv5abcsub0coh47tqk.apps.googleusercontent.com</string>
+	<string>852470150994-63u0e5fpetsqi7732gqoh1oraq7f71dd.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.74491443279-7kk006v08pg08tqv5abcsub0coh47tqk</string>
+	<string>com.googleusercontent.apps.852470150994-63u0e5fpetsqi7732gqoh1oraq7f71dd</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAF6ekPW2zQ8--x6DhSQaLeAB0ax7LOJVk</string>
+	<string>AIzaSyCerDK6Gi5qbTiiwZ4m_P7BkCL790tUta8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>74491443279</string>
+	<string>852470150994</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>danilSabitov.weatherApp</string>
 	<key>PROJECT_ID</key>
-	<string>weatherapp-a98b5</string>
+	<string>weatherapp-898a8</string>
 	<key>STORAGE_BUCKET</key>
-	<string>weatherapp-a98b5.appspot.com</string>
+	<string>weatherapp-898a8.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:74491443279:ios:7cd8089b600397a5bbd23a</string>
+	<string>1:852470150994:ios:b1a749c59242895511ac8b</string>
 </dict>
 </plist>
