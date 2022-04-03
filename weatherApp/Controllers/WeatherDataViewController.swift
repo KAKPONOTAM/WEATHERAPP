@@ -4,7 +4,6 @@ class WeatherDataViewController: UIViewController {
     private var currentWeatherData: CurrentWeatherInfo?
     private var filteredArray = [String]()
     private var weeklyWeatherData: WeeklyWeatherData?
-    private var cityCoordinates = [CityCoordinates]()
     private let cityNameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0

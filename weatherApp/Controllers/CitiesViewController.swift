@@ -13,7 +13,6 @@ class CitiesViewController: UIViewController {
     private var citiesArray = [CityNames]()
     private var currentWeatherData: CurrentWeatherInfo?
     private var weeklyWeatherData: WeeklyWeatherData?
-    private var cityCoordinates = [CityCoordinates]()
     private let locationManager = CLLocationManager()
     private var filteredCityNamesArray = [String]()
     private var cityNamesArray = [String]()
