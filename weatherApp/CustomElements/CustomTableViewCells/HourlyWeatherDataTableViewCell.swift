@@ -22,7 +22,6 @@ class HourlyWeatherDataTableViewCell: UITableViewCell {
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.reloadData()
         collectionView.register(HourlyWeatherDataCollectionViewCell.self, forCellWithReuseIdentifier: HourlyWeatherDataCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -31,7 +30,6 @@ class HourlyWeatherDataTableViewCell: UITableViewCell {
     //MARK: - override init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        //setupCollectionView()
         contentView.addSubview(hourWeatherInfoContainer)
         hourWeatherInfoContainer.contentView.addSubview(hourWeatherCollectionView)
         setupConstraints()
@@ -43,13 +41,6 @@ class HourlyWeatherDataTableViewCell: UITableViewCell {
     }
     
     //MARK: - methods
-    private func setupCollectionView() {
-        hourWeatherCollectionView.delegate = self
-        hourWeatherCollectionView.dataSource = self
-        
-        hourWeatherCollectionView.register(HourlyWeatherDataCollectionViewCell.self, forCellWithReuseIdentifier: HourlyWeatherDataCollectionViewCell.identifier)
-    }
-    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             hourWeatherInfoContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -68,6 +59,7 @@ class HourlyWeatherDataTableViewCell: UITableViewCell {
     
     func hourlyWeatherTableViewCellConfigure(hourWeatherData: WeeklyWeatherData) {
         self.hourlyWeatherData = hourWeatherData
+        self.hourWeatherCollectionView.reloadData()
     }
 }
 
