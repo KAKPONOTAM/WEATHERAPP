@@ -34,7 +34,7 @@ class WeatherNetworkManager {
     }
     
     func fetchRequestDataForCurrentWeather(cityName: String, completion: @escaping (CurrentWeatherInfo?) -> ()) {
-        let dataString = "https://api.openweathermap.org/data/2.5/weather?lat=55.7522&lon=37.6156&q=\(cityName)&units=metric&appid=9f9bd273673c133c5d046f2157e4885f".encodeUrl
+        let dataString = "https://api.openweathermap.org/data/2.5/weather?lat=55.7522&lon=37.6156&q=\(cityName)&units=metric&appid=affb0db14f9a58a6476f7e151f373f8a".encodeUrl
         guard let url = URL(string: dataString) else { return }
         let request = URLRequest(url: url)
         
