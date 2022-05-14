@@ -65,8 +65,7 @@ class HourlyWeatherDataTableViewCell: UITableViewCell {
 
 extension HourlyWeatherDataTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let hourWeatherDataArrayElements = hourlyWeatherData?.hourly else { return 0 }
-        return hourWeatherDataArrayElements.count
+        return hourlyWeatherData?.hourly?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
